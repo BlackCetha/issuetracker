@@ -1,1 +1,1 @@
-@nodemon api.js
+@node api.js
