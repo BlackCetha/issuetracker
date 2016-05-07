@@ -172,3 +172,74 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+/* ADD PERMISSIONS */
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+CREATE DATABASE IF NOT EXISTS `issuetracker` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `issuetracker`;
+
+INSERT INTO `groups` (`id`, `name`, `alias`, `color`) VALUES
+(1, 'admin', 'Administrator', '#AA0000'),
+(2, 'mod', 'Moderator', '#00AA00'),
+(5, 'testgroup', 'TestGroup', '#444');
+
+INSERT INTO `groups_permissions` (`id`, `group_id`, `permission_id`) VALUES
+(2, 1, 1),
+(4, 1, 2),
+(5, 1, 3),
+(6, 1, 4),
+(7, 1, 5),
+(8, 1, 6),
+(9, 1, 7),
+(10, 1, 8),
+(11, 1, 9),
+(12, 1, 10),
+(13, 1, 11),
+(14, 1, 12),
+(15, 1, 13),
+(16, 1, 14),
+(17, 1, 15),
+(18, 1, 16),
+(19, 1, 18),
+(20, 1, 20),
+(21, 1, 19),
+(23, 1, 29),
+(26, 1, 32),
+(27, 1, 33),
+(28, 1, 34);
+
+INSERT INTO `permissions` (`id`, `string`, `description`) VALUES
+(1, 'service_create', 'Create a new service'),
+(2, 'service_edit', 'Edit a service'),
+(3, 'service_delete', 'Delete a service'),
+(4, 'report_create', 'Create a report'),
+(5, 'report_edit', 'Edit a report'),
+(6, 'report_delete', 'Delete a report'),
+(7, 'report_view', 'View the list of all reports'),
+(8, 'report_detail', 'View details of one report'),
+(9, 'service_view', 'View the list of all services'),
+(10, 'service_detail', 'View details of one service'),
+(11, 'report_edit_own', 'Edit own reports'),
+(12, 'answer_create', 'Create a answer'),
+(13, 'answer_delete', 'Delete a answer'),
+(14, 'user_detail', 'View details about one user'),
+(15, 'user_reports', 'List reports of a user'),
+(16, 'user_groups', 'List the groups of a user'),
+(17, 'user_add_group', 'General permission to add users to groups'),
+(18, 'user_add_group_master', 'Absolute permission to add users to groups, ignores individual group settings'),
+(19, 'user_rm_group_master', 'Absolute permission to remove users from groups, ignores individual group permissions'),
+(20, 'user_password', 'Set a new password for a user'),
+(21, 'answer_edit', 'Edit a answer'),
+(22, 'answer_edit_own', 'Edit own answer'),
+(23, 'answer_delete_own', 'Delete own answer'),
+(24, 'user_rm_group', 'General permission to remove a user from a group'),
+(25, 'user_edit', 'Edit profile of a user'),
+(26, 'user_edit_own', 'Edit own profile'),
+(27, 'user_password', 'Set the password of a user'),
+(28, 'user_password_own', 'Edit own password'),
+(29, 'perm_list', 'View all permissions'),
+(32, 'group_create', 'Create a new group'),
+(33, 'group_edit', 'Edit a group'),
+(34, 'group_delete', 'Delete a group');
